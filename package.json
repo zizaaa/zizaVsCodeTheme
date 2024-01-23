@@ -3,6 +3,7 @@
   "displayName": "ziza",
   "description": "A minimal dark blue theme",
   "version": "0.0.1",
+  "publisher":"ziza",
   "engines": {
     "vscode": "^1.85.0"
   },
