@@ -1,5 +1,5 @@
 {
-  "name": "ziza",
+  "name": "ziza-dark-theme",
   "displayName": "ziza",
   "description": "A minimal dark blue theme",
   "version": "0.0.1",
@@ -8,6 +8,19 @@
   },
   "categories": [
     "Themes"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zizaaa/zizaVsCodeTheme"
+  },
+  "keywords":[
+    "theme",
+    "dark theme",
+    "ziza",
+    "minimal blue",
+    "dark blue",
+    "dark color",
+    "dark"
   ],
   "contributes": {
     "themes": [
