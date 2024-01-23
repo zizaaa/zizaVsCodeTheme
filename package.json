@@ -24,7 +24,8 @@
     "minimal blue",
     "dark blue",
     "dark color",
-    "dark"
+    "dark",
+    "minimal"
   ],
   "contributes": {
     "themes": [
