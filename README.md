@@ -18,7 +18,6 @@
 
 ## Color Reference
 
-### Syntax Colors
 ![#6679a4](https://via.placeholder.com/10/6679a4.png?text=+) `#6679a4` 
 ![#1d2433](https://via.placeholder.com/10/1d2433.png?text=+) `#1d2433` 
 ![#171c28](https://via.placeholder.com/10/171c28.png?text=+) `#171c28` 
