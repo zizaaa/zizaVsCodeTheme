@@ -4,7 +4,7 @@
 <p align="center">
   A minimal dark blue theme
 
-![demo](https://raw.githubusercontent.com/zizaaa/zizaVsCodeThemee/master/imgs/pic.jpg)
+![demo](https://imgur.com/1mJurrH)
 
 ## Installation via VS Code
 
