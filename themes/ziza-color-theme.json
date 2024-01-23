@@ -359,13 +359,14 @@
 				"meta.object-literal.key.js.jsx",
 			],
 			"settings": {
-				"foreground": "#a2aabc"
+				"foreground": "#ffae57"
 			}
 		},
 		{
 			"name": "edited Block Level Variables",
 			"scope": [
-				"variable.other.object.js.jsx"
+				"variable.other.object.js.jsx",
+				"meta.block variable.other",
 			],
 			"settings": {
 				"foreground": "#a2aabc"
