@@ -1,9 +1,10 @@
 {
-  "name": "ziza-dark-theme",
-  "displayName": "ziza",
+  "name": "ziza",
+  "displayName": "ziza-dark-theme",
   "description": "A minimal dark blue theme",
   "version": "0.0.1",
   "publisher":"ziza",
+  "icon": "imgs/623514e2a262b3c1fdd0c0186e031a2c.jpg",
   "engines": {
     "vscode": "^1.85.0"
   },
