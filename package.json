@@ -29,7 +29,7 @@
   "contributes": {
     "themes": [
       {
-        "label": "ziza",
+        "label": "ziza theme",
         "uiTheme": "vs-dark",
         "path": "./themes/ziza-color-theme.json"
       }
