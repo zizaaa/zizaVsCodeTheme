@@ -1,8 +1,8 @@
 {
-  "name": "ziza-dark-theme",
-  "displayName": "ziza-dark-theme",
+  "name": "zizatheme",
+  "displayName": "Ziza theme",
   "description": "A minimal dark blue theme",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher":"ziza",
   "icon": "imgs/623514e2a262b3c1fdd0c0186e031a2c.jpg",
   "engines": {
@@ -18,7 +18,9 @@
   "keywords":[
     "theme",
     "dark theme",
+    "ziza dark theme",
     "ziza",
+    "ziza theme",
     "minimal blue",
     "dark blue",
     "dark color",
