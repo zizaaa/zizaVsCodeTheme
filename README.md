@@ -1,5 +1,5 @@
 <h1 align="center">
-  Ziza dark Theme for VS Code
+  Ziza Dark Theme for VS Code
 </h1>
 <p align="center">
   A minimal dark blue theme
@@ -12,7 +12,7 @@
 2. Search for `Ziza theme`
 3. Click **Install** to install it
 4. Click **Reload** to reload the editor
-5. Code > Preferences > Color Theme > **ziza**
+5. Code > Preferences > Color Theme > **ziza theme**
 
 
 ## Color Reference
