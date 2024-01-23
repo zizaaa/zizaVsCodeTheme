@@ -4,7 +4,7 @@
 <p align="center">
   A minimal dark blue theme
 
-![demo](https://imgur.com/1mJurrH)
+![demo](https://i.imgur.com/1mJurrH.jpg)
 
 ## Installation via VS Code
 
