@@ -2,8 +2,7 @@
   Ziza dark Theme for VS Code
 </h1>
 <p align="center">
-  A minimal, dark blue theme for <a href="https://halcyon-theme.netlify.com/">VS Code, Sublime Text, Atom, and more</a>.
-</p>
+  A minimal dark blue theme
 
 ![demo](https://github.com/zizaaa/zizaVsCodeTheme/blob/main/imgs/pic.jpg)
 
