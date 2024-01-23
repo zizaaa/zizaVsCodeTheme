@@ -339,15 +339,6 @@
 				"foreground": "#f07178"
 			}
 		},
-		// {
-		// 	"name": "Tag 2",
-		// 	"scope": [
-		// 		"entity.name.tag",
-		// 	],
-		// 	"settings": {
-		// 		"foreground": "#5ccfe6ef"
-		// 	}
-		// },
 		{
 			"name": "Function, Special Method",
 			"scope": [
