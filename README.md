@@ -18,7 +18,7 @@
   </a> -->
 <!-- </p> -->
 
-![demo](https://raw.githubusercontent.com/zizaaa/zizaVsCodeTheme/main/omgs/pic.jpg)
+![demo](https://github.com/zizaaa/zizaVsCodeTheme/blob/main/imgs/pic.jpg)
 
 ## Installation via VS Code
 
