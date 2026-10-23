@@ -1,36 +1,48 @@
 {
   "name": "ziza-dark-theme",
-  "displayName": "Ziza theme",
-  "description": "A minimal dark blue theme",
-  "version": "0.0.5",
-  "publisher":"ziza",
-  "icon": "imgs/623514e2a262b3c1fdd0c0186e031a2c.jpg",
+  "displayName": "Ziza Dark Theme",
+  "description": "A minimal dark blue theme with a soft pastel syntax palette, easy on the eyes for long coding sessions.",
+  "version": "0.1.0",
+  "publisher": "ziza",
+  "license": "MIT",
+  "icon": "imgs/icon.png",
   "engines": {
     "vscode": "^1.85.0"
   },
   "categories": [
     "Themes"
   ],
+  "galleryBanner": {
+    "color": "#171c28",
+    "theme": "dark"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zizaaa/zizaVsCodeTheme"
+    "url": "https://github.com/zizaaa/zizaVsCodeTheme.git"
   },
-  "keywords":[
+  "homepage": "https://zizadarktheme.weteon.com",
+  "bugs": {
+    "url": "https://github.com/zizaaa/zizaVsCodeTheme/issues"
+  },
+  "keywords": [
     "theme",
+    "color-theme",
+    "dark",
     "dark theme",
-    "ziza dark theme",
+    "dark blue",
+    "blue",
+    "minimal",
+    "pastel",
+    "night",
     "ziza",
     "ziza theme",
-    "minimal blue",
-    "dark blue",
-    "dark color",
-    "dark",
-    "minimal"
+    "ziza dark"
   ],
   "contributes": {
     "themes": [
       {
-        "label": "ziza theme",
+        "id": "ziza theme",
+        "label": "Ziza Dark",
         "uiTheme": "vs-dark",
         "path": "./themes/ziza-color-theme.json"
       }
