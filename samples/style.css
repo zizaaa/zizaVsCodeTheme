@@ -1,0 +1,19 @@
+/* Comment: CSS sample */
+:root {
+  --primary: #1d2433;
+  --accent: #c3a6ff;
+}
+
+.container > .item:hover,
+#main-header::before {
+  display: flex;
+  margin: 0 auto;
+  padding: 1.5rem 2px;
+  color: var(--accent);
+  background: rgba(29, 36, 51, 0.8);
+  transition: all 200ms ease-in-out !important;
+}
+
+@media (max-width: 768px) {
+  .container { width: 100%; }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "ziza",
+  "version": 1,
+  "enabled": true,
+  "nothing": null,
+  "settings": {
+    "theme": "dark",
+    "nested": {
+      "level": 2,
+      "deeper": { "level": 3, "items": [1, 2, 3] }
+    }
+  }
+}
