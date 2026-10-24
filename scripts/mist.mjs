@@ -1,12 +1,15 @@
 // Ziza Mist: a softer variant for people who find high contrast tiring, for example
 // with astigmatism. It is generated from Ziza Dark with these choices:
 //
-// - A lighter editor background, so the screen is brighter overall and the pupil
-//   stays smaller (a larger pupil adds blur from the eye's own aberrations).
-//   Every other dark surface moves by the same OKLab lightness.
+// - A slightly lighter editor background (#252d3f). Every other dark surface moves
+//   by the same OKLab lightness. The shift is small on purpose: research only
+//   supports avoiding extremes, not any particular lightness for a dark background.
 // - Text and syntax colors are re-fitted to an APCA lightness contrast target
-//   (about Lc 48 to 76), well under the roughly Lc 90 where halation starts, and
-//   above the Lc 60 that APCA suggests for content text. Chroma is cut by 15%.
+//   (about Lc 53 to 80). That is above the Lc 60 APCA minimum for content text and
+//   below the roughly Lc 90 where halation starts. Chroma is cut by only 5% so the
+//   syntax colors stay easy to tell apart.
+// - The default text is nearly neutral (45% of its chroma kept), because saturated
+//   blue text is harder for the eye to focus on a dark background.
 // - No italics, which are harder to read for people with low vision. Markdown
 //   emphasis keeps its italic because it carries meaning.
 //
@@ -16,25 +19,27 @@
 import { apcaLc, chroma, fromOklab, toOklab } from './color-math.mjs';
 
 const EDITOR_DARK = '#1d2433';
-const EDITOR_MIST = '#30384c';
-const CHROMA_KEPT = 0.85;
+const EDITOR_MIST = '#252d3f';
+const CHROMA_KEPT = 0.95;
+const DEFAULT_TEXT_CHROMA_KEPT = 0.45;
+const DEFAULT_TEXT = '#8695b7';
 
 const HEX = /^#([0-9a-f]{6})([0-9a-f]{2})?$/i;
 const lightnessShift = toOklab(EDITOR_MIST)[0] - toOklab(EDITOR_DARK)[0];
 
 // APCA Lc target for each text color of Ziza Dark
 const textTargets = {
-	'#8695b7': -62, // default text
-	'#7083ad': -48, // comments
-	'#6679a4': -45, // markdown separators
-	'#c3a6ff': -66, // lavender
-	'#82aaff': -64, // blue
-	'#e78284': -60, // soft red
-	'#e5c890': -74, // sand
-	'#ef9f76': -65, // peach
-	'#a6d189': -71, // sage
-	'#99d1db': -72, // cyan
-	'#b2ccd6': -72, // steel
+	'#8695b7': -70, // default text
+	'#7083ad': -56, // comments
+	'#6679a4': -53, // markdown separators
+	'#c3a6ff': -74, // lavender
+	'#82aaff': -72, // blue
+	'#e78284': -68, // soft red
+	'#e5c890': -78, // sand
+	'#ef9f76': -73, // peach
+	'#a6d189': -78, // sage
+	'#99d1db': -78, // cyan
+	'#b2ccd6': -78, // steel
 };
 
 // Line numbers stay muted; the active line number is as readable as text.
@@ -46,12 +51,12 @@ const keyTargets = {
 const isSurface = (lab) => lab[0] < 0.42 && chroma(lab) < 0.08;
 const isTextKey = (key) => /foreground|Foreground|ansi|\.fg|Text/.test(key);
 
-function fitToTarget(hex, target) {
+function fitToTarget(hex, target, chromaKept = CHROMA_KEPT) {
 	const [, a, b] = toOklab(hex);
 	let best = hex;
 	let bestError = Infinity;
-	for (let lightness = 0.3; lightness <= 0.98; lightness += 0.002) {
-		const candidate = fromOklab([lightness, a * CHROMA_KEPT, b * CHROMA_KEPT]);
+	for (let lightness = 0.3; lightness <= 0.99; lightness += 0.002) {
+		const candidate = fromOklab([lightness, a * chromaKept, b * chromaKept]);
 		const error = Math.abs(apcaLc(candidate, EDITOR_MIST) - target);
 		if (error < bestError) {
 			bestError = error;
@@ -61,10 +66,10 @@ function fitToTarget(hex, target) {
 	return best;
 }
 
-// Other text colors: squeeze Ziza Dark's contrast range toward the middle (Lc 55 to 76)
+// Other text colors: squeeze Ziza Dark's contrast range toward the middle (Lc 59 to 80)
 function fitOtherText(hex) {
 	const original = Math.abs(apcaLc(hex, EDITOR_DARK));
-	return fitToTarget(hex, -Math.min(76, Math.max(55, 76 - (76 - original) * 0.42)));
+	return fitToTarget(hex, -Math.min(76, Math.max(55, 76 - (76 - original) * 0.42)) - 4);
 }
 
 const cache = new Map();
@@ -77,6 +82,7 @@ function recolor(value, isText, key) {
 		let result = base;
 		if (keyTargets[key]) result = fitToTarget(base, keyTargets[key]);
 		else if (isSurface(lab)) result = fromOklab([lab[0] + lightnessShift, lab[1], lab[2]]);
+		else if (isText && base === DEFAULT_TEXT) result = fitToTarget(base, textTargets[base], DEFAULT_TEXT_CHROMA_KEPT);
 		else if (isText && textTargets[base]) result = fitToTarget(base, textTargets[base]);
 		else if (isText && lab[0] >= 0.42) result = fitOtherText(base);
 		cache.set(cacheKey, result);
