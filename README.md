@@ -37,6 +37,7 @@ Requires VS Code 1.85 or newer.
 |---|---|
 | **Ziza Dark** | The original deep blue. |
 | **Ziza Midnight** | Darker backgrounds and a little more contrast, for dark rooms. Same syntax colors. |
+| **Ziza Mist** | A lighter background, softer colors, and no italics, for less glare. Some people with astigmatism find lower contrast easier on the eyes. |
 
 ## What you get
 

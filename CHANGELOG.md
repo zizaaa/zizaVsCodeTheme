@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Added
 - Ziza Midnight: a darker version of Ziza Dark for dark rooms. Press Ctrl+K, then Ctrl+T and choose Ziza Midnight.
+- Ziza Mist: a softer version of Ziza Dark with a lighter background, less saturated colors, moderate contrast, and no italics, for less glare. Press Ctrl+K, then Ctrl+T and choose Ziza Mist.
 
 ## [0.1.0] - 2026-10-23
 
