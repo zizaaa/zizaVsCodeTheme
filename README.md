@@ -39,6 +39,14 @@ Requires VS Code 1.85 or newer.
 | **Ziza Midnight** | Darker backgrounds and a little more contrast, for dark rooms. Same syntax colors. |
 | **Ziza Mist** | A slightly lighter background, softer and easier-to-tell-apart colors, readable text without harsh extremes, and no italics, for less glare. Some people with astigmatism find lower contrast easier on the eyes. |
 
+**Ziza Midnight**
+
+![Ziza Midnight preview](imgs/preview-midnight.png)
+
+**Ziza Mist**
+
+![Ziza Mist preview](imgs/preview-mist.png)
+
 ## What you get
 
 - A deep blue workspace where the sidebar, tabs, panels, status bar, and terminal share one set of blues.
