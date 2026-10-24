@@ -8,3 +8,6 @@ imgs/icon.svg
 imgs/pic.jpg
 imgs/623514e2a262b3c1fdd0c0186e031a2c.jpg
 imgs/preview.png
+scripts/**
+patch.md
+*.diff
