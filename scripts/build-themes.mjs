@@ -19,27 +19,39 @@ function mapColor(value, colors) {
 	return mapped ? mapped + (m[2] ?? '').toLowerCase() : value;
 }
 
+// A variant recolors with either a hex map (`colors`) or a function (`transform`)
+function recolor(variant, value, where) {
+	return variant.transform ? variant.transform(value, where) : mapColor(value, variant.colors);
+}
+
+const withoutItalic = (fontStyle) => fontStyle.split(/\s+/).filter((part) => part && part !== 'italic').join(' ');
+
 function buildVariant(variant) {
 	const theme = structuredClone(source);
 	theme.name = variant.name;
 
 	for (const key of Object.keys(theme.colors)) {
-		theme.colors[key] = mapColor(theme.colors[key], variant.colors);
+		theme.colors[key] = recolor(variant, theme.colors[key], { part: 'colors', key });
 	}
 	Object.assign(theme.colors, variant.overrides);
 
 	for (const rule of theme.tokenColors) {
 		const s = rule.settings;
-		if (s.foreground) s.foreground = mapColor(s.foreground, variant.colors);
-		if (s.background) s.background = mapColor(s.background, variant.colors);
+		if (s.foreground) s.foreground = recolor(variant, s.foreground, { part: 'tokenForeground' });
+		if (s.background) s.background = recolor(variant, s.background, { part: 'tokenBackground' });
+		if (variant.noItalics && s.fontStyle && !variant.keepsItalic?.(rule)) s.fontStyle = withoutItalic(s.fontStyle);
 	}
 
 	for (const [selector, style] of Object.entries(theme.semanticTokenColors ?? {})) {
 		if (typeof style === 'string') {
-			theme.semanticTokenColors[selector] = mapColor(style, variant.colors);
+			theme.semanticTokenColors[selector] = recolor(variant, style, { part: 'semantic' });
 			continue;
 		}
-		if (style.foreground) style.foreground = mapColor(style.foreground, variant.colors);
+		if (style.foreground) style.foreground = recolor(variant, style.foreground, { part: 'semantic' });
+		if (variant.noItalics) {
+			delete style.italic;
+			if (style.fontStyle) style.fontStyle = withoutItalic(style.fontStyle);
+		}
 	}
 
 	return theme;

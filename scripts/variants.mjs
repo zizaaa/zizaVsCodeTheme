@@ -2,8 +2,11 @@
 //
 // Ziza Dark stays the single source of truth: edit that file, then run
 // `npm run build:themes`. Every variant is described here as a color map
-// (Ziza Dark hex -> variant hex, alpha suffixes are kept) plus optional
-// per-key overrides. Colors not listed in a map are left unchanged.
+// (Ziza Dark hex -> variant hex, alpha suffixes are kept) or a `transform`
+// function, plus optional per-key overrides. Colors not listed in a map are
+// left unchanged.
+
+import { keepsItalic, mistColor } from './mist.mjs';
 
 // Ziza Midnight: only the backgrounds and surfaces go about 5% darker in
 // OKLCH lightness (every color below L 0.40 with low chroma). Text and
@@ -26,5 +29,12 @@ export const variants = [
 		file: 'ziza-midnight-color-theme.json',
 		name: 'ziza-midnight-theme',
 		colors: midnightColors,
+	},
+	{
+		file: 'ziza-mist-color-theme.json',
+		name: 'ziza-mist-theme',
+		transform: mistColor,
+		noItalics: true,
+		keepsItalic,
 	},
 ];

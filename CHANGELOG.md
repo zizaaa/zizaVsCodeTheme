@@ -4,13 +4,14 @@ All notable changes to the "Ziza Dark Theme" extension are documented in this fi
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
-## [Unreleased]
+## [0.2.0] - 2026-10-25
 
 ### Changed
 - Ziza Dark: line numbers and input placeholder text are slightly brighter, so they reach a 3:1 contrast ratio.
 
 ### Added
 - Ziza Midnight: a darker version of Ziza Dark for dark rooms. Press Ctrl+K, then Ctrl+T and choose Ziza Midnight.
+- Ziza Mist: a softer version of Ziza Dark with a slightly lighter background, softer colors, moderate contrast, and no italics, for less glare. Press Ctrl+K, then Ctrl+T and choose Ziza Mist.
 
 ## [0.1.0] - 2026-10-23
 
