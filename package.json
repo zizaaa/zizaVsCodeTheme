@@ -2,7 +2,7 @@
   "name": "ziza-dark-theme",
   "displayName": "Ziza Dark Theme",
   "description": "A minimal dark blue theme with a soft pastel syntax palette, easy on the eyes for long coding sessions. Includes Ziza Midnight, a darker version for dark rooms, and Ziza Mist, a softer version with less glare.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "ziza",
   "license": "MIT",
   "icon": "imgs/icon.png",

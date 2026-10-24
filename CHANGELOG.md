@@ -4,7 +4,7 @@ All notable changes to the "Ziza Dark Theme" extension are documented in this fi
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
-## [Unreleased]
+## [0.2.0] - 2026-10-25
 
 ### Changed
 - Ziza Dark: line numbers and input placeholder text are slightly brighter, so they reach a 3:1 contrast ratio.
