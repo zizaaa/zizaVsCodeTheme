@@ -1,13 +1,18 @@
 {
   "name": "ziza-dark-theme",
   "displayName": "Ziza Dark Theme",
-  "description": "A minimal dark blue theme with a soft pastel syntax palette, easy on the eyes for long coding sessions.",
+  "description": "A minimal dark blue theme with a soft pastel syntax palette, easy on the eyes for long coding sessions. Includes Ziza Midnight, a darker version for dark rooms.",
   "version": "0.1.0",
   "publisher": "ziza",
   "license": "MIT",
   "icon": "imgs/icon.png",
   "engines": {
     "vscode": "^1.85.0"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build:themes",
+    "build:themes": "node scripts/build-themes.mjs",
+    "check": "node scripts/check-contrast.mjs"
   },
   "categories": [
     "Themes"
@@ -36,7 +41,8 @@
     "night",
     "ziza",
     "ziza theme",
-    "ziza dark"
+    "ziza dark",
+    "midnight"
   ],
   "contributes": {
     "themes": [
@@ -45,6 +51,12 @@
         "label": "Ziza Dark",
         "uiTheme": "vs-dark",
         "path": "./themes/ziza-color-theme.json"
+      },
+      {
+        "id": "ziza-midnight",
+        "label": "Ziza Midnight",
+        "uiTheme": "vs-dark",
+        "path": "./themes/ziza-midnight-color-theme.json"
       }
     ]
   }

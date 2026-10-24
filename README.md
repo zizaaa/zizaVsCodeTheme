@@ -31,6 +31,13 @@ ext install ziza.ziza-dark-theme
 
 Requires VS Code 1.85 or newer.
 
+## Themes
+
+| Theme | For |
+|---|---|
+| **Ziza Dark** | The original deep blue. |
+| **Ziza Midnight** | Darker backgrounds and a little more contrast, for dark rooms. Same syntax colors. |
+
 ## What you get
 
 - A deep blue workspace where the sidebar, tabs, panels, status bar, and terminal share one set of blues.
@@ -60,7 +67,7 @@ Found a language or UI element that looks off? [Open an issue](https://github.co
 
 1. Open this repository in VS Code and press `F5` to start an Extension Development Host.
 2. In that window, choose **Ziza Dark** and open the `samples/` folder, which has a test file for several languages.
-3. Edit `themes/ziza-color-theme.json`. Saved changes apply live. Use **Developer: Inspect Editor Tokens and Scopes** to find the scope of a token.
+3. Edit `themes/ziza-color-theme.json`. Saved changes apply live. Then run `npm run build:themes` to regenerate Ziza Midnight and `npm run check` to check contrast. Never edit the generated `ziza-midnight-color-theme.json` by hand. Use **Developer: Inspect Editor Tokens and Scopes** to find the scope of a token.
 
 ## License
 
