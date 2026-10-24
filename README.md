@@ -21,7 +21,7 @@ Want to see your own code? Try the live preview at **[zizadarktheme.weteon.com](
 
 1. Open the Extensions panel in VS Code (`Ctrl+Shift+X`).
 2. Search for **Ziza Dark Theme** and click **Install**.
-3. Press `Ctrl+K`, then `Ctrl+T` (`Cmd+K`, then `Cmd+T` on Mac) and choose **Ziza Dark**.
+3. Press `Ctrl+K`, then `Ctrl+T` (`Cmd+K`, then `Cmd+T` on Mac) and choose **Ziza Dark**, **Ziza Midnight**, or **Ziza Mist**.
 
 Or paste this into Quick Open (`Ctrl+P`):
 
@@ -38,6 +38,14 @@ Requires VS Code 1.85 or newer.
 | **Ziza Dark** | The original deep blue. |
 | **Ziza Midnight** | Darker backgrounds and a little more contrast, for dark rooms. Same syntax colors. |
 | **Ziza Mist** | A slightly lighter background, softer and easier-to-tell-apart colors, readable text without harsh extremes, and no italics, for less glare. Some people with astigmatism find lower contrast easier on the eyes. |
+
+**Ziza Midnight**
+
+![Ziza Midnight preview](imgs/preview-midnight.png)
+
+**Ziza Mist**
+
+![Ziza Mist preview](imgs/preview-mist.png)
 
 ## What you get
 
@@ -57,8 +65,10 @@ Requires VS Code 1.85 or newer.
 | ![](https://img.shields.io/badge/-ef9f76-ef9f76?style=flat-square) | Peach | `#ef9f76` | Numbers, constants, parameters |
 | ![](https://img.shields.io/badge/-a6d189-a6d189?style=flat-square) | Sage | `#a6d189` | Strings |
 | ![](https://img.shields.io/badge/-99d1db-99d1db?style=flat-square) | Cyan | `#99d1db` | Regex, escapes |
-| ![](https://img.shields.io/badge/-1d2433-1d2433?style=flat-square) | Midnight | `#1d2433` | Editor background |
+| ![](https://img.shields.io/badge/-1d2433-1d2433?style=flat-square) | Navy | `#1d2433` | Editor background |
 | ![](https://img.shields.io/badge/-171c28-171c28?style=flat-square) | Night | `#171c28` | Sidebar, panels, status bar |
+
+This is the palette of **Ziza Dark**. **Ziza Midnight** keeps the same accents on darker backgrounds (`#121826` editor, `#0c111b` sidebar). **Ziza Mist** uses softer versions of the accents on a slightly lighter background (`#252d3f` editor, `#202531` sidebar), with no italics.
 
 ## Feedback
 
@@ -68,7 +78,7 @@ Found a language or UI element that looks off? [Open an issue](https://github.co
 
 1. Open this repository in VS Code and press `F5` to start an Extension Development Host.
 2. In that window, choose **Ziza Dark** and open the `samples/` folder, which has a test file for several languages.
-3. Edit `themes/ziza-color-theme.json`. Saved changes apply live. Then run `npm run build:themes` to regenerate Ziza Midnight and `npm run check` to check contrast. Never edit the generated `ziza-midnight-color-theme.json` by hand. Use **Developer: Inspect Editor Tokens and Scopes** to find the scope of a token.
+3. Edit `themes/ziza-color-theme.json`. Saved changes apply live. Then run `npm run build:themes` to regenerate Ziza Midnight and Ziza Mist, and `npm run check` to check contrast. Never edit the generated `ziza-midnight-color-theme.json` or `ziza-mist-color-theme.json` by hand. The variants are defined in `scripts/variants.mjs` (Midnight is a color map, Mist is fitted to contrast targets in `scripts/mist.mjs`). Use **Developer: Inspect Editor Tokens and Scopes** to find the scope of a token.
 
 ## License
 
